@@ -243,7 +243,7 @@ class SchoolUnionAssistant:
         
         return results
     
-    def answer_question(self, question: str, model: str = "llama-3.1-70b-versatile"):
+    def answer_question(self, question: str, model: str = "llama-3.3-70b-versatile"):
         """Risponde alla domanda con RAG"""
         results = self.search_content(question, n_results=4)
         
@@ -328,8 +328,8 @@ def main():
         
         model = st.selectbox(
             "🤖 Modello",
-            ["llama-3.1-70b-versatile", "llama-3.1-8b-instant"],
-            help="70b è più accurato per risposte complesse"
+            ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "mixtral-8x7b-32768"],
+            help="llama-3.3-70b è il più accurato"
         )
         
         st.divider()
